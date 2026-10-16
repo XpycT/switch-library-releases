@@ -1,5 +1,7 @@
 # Switch Library
 
+**English** · [Українська](README.uk.md)
+
 A native desktop app for organizing Nintendo Switch game archives. Browse your collection, check for known updates, and manage downloads in one place.
 
 This repository hosts public releases and issue reports.
@@ -20,7 +22,7 @@ The scanner does not decrypt archives or require console keys. Unknown local ver
 
 ## Downloads and installation
 
-Open [Releases](https://github.com/XpycT/switch-library-releases/releases) and choose the file for your platform. If no releases are listed, public downloads have not been published yet. The formats below describe the configured build outputs; check each release for the files actually available.
+Open [Releases](https://github.com/XpycT/switch-library-releases/releases) and choose the file for your platform. If no releases are listed, public downloads have not been published yet. Filenames may differ; each release page lists the files it actually contains.
 
 | Platform | File | Notes |
 | --- | --- | --- |
@@ -28,7 +30,7 @@ Open [Releases](https://github.com/XpycT/switch-library-releases/releases) and c
 | Windows / x64 | `Switch-Library-windows-x64.zip` | ZIP containing the executable |
 | Linux / x86_64 | `Switch-Library-linux-x86_64.AppImage` | Built on Ubuntu 22.04, with a glibc 2.35 baseline |
 
-macOS is the locally verified platform. Windows and Linux builds still need native testing; availability of a build is not a guarantee that every desktop configuration works.
+macOS is the verified platform. Windows and Linux builds are untested on native hardware, and a build being available does not mean it runs on every desktop configuration.
 
 ### macOS
 
@@ -55,18 +57,18 @@ If FUSE is unavailable, extract and run it with:
 ./Switch-Library-linux-x86_64.AppImage --appimage-extract-and-run
 ```
 
-A Wayland or X11 desktop session, working Vulkan drivers, and a desktop portal with a backend appropriate to your desktop are required. AppImage packages application libraries but does not replace your graphics drivers or guarantee compatibility with every Linux distribution.
+A Wayland or X11 desktop session, working Vulkan drivers, and a desktop portal with a backend appropriate to your desktop are required. AppImage packages application libraries but does not replace your graphics drivers or work on every Linux distribution.
 
 ## Getting started
 
 1. Open the app and choose the folder containing your game archives.
-2. Wait for the scan to finish, then browse your collection and check known updates.
+2. Wait for the scan to finish, then browse your collection and check for known updates.
 3. Open Settings to change the library folder, interface language, or catalog sources.
 
-Changing the selected library folder does not move existing files. Scanning does not modify archives. File replacement and deletion are separate, confirmed actions.
+Changing the library folder leaves existing files where they are. Scanning never writes to archives. Replacing or deleting files happens only when you confirm it.
 
 ## Bugs and feature requests
 
 Search [existing issues](https://github.com/XpycT/switch-library-releases/issues) before opening a new one. Use the bug report template for failures and the feature request template for improvements.
 
-Include the application version, operating system, CPU architecture, and reproducible steps. Remove private paths, credentials, and private download links from logs and screenshots. Do not attach game archives or console keys.
+Include the application version, operating system, CPU architecture, and reproducible steps. Strip personal paths, credentials, and private download links from logs and screenshots. Do not attach game archives or console keys.
