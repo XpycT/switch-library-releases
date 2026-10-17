@@ -4,7 +4,9 @@
 
 A native desktop app for organizing Nintendo Switch game archives. Browse your collection, check for known updates, and manage downloads in one place.
 
-This repository hosts public releases and issue reports.
+The app uses external catalogs. Switch Library itself does not distribute game releases.
+
+This repository hosts public releases of the app and issue reports.
 
 [Download releases](https://github.com/XpycT/switch-library-releases/releases) · [Report a bug](https://github.com/XpycT/switch-library-releases/issues/new?template=bug_report.md) · [Request a feature](https://github.com/XpycT/switch-library-releases/issues/new?template=feature_request.md)
 
@@ -14,9 +16,12 @@ This repository hosts public releases and issue reports.
 
 - Scan NSP, NSZ, NSX, XCI, and XCZ archives recursively.
 - Group base games, updates, and DLC by Title ID.
-- Browse covers, screenshots, metadata, and local files with search and sorting.
+- Browse your library and external catalogs with covers, screenshots, game descriptions, and local file lists. Search by name, filter by genre, and sort by title, size, or release date.
 - Compare known local versions with titledb to find available updates.
-- Manage an embedded BitTorrent download queue with pause, resume, and file comparison before replacement.
+- Choose between available releases of a game and compare their files with your local copy before downloading.
+- Add games to the download queue. Pause, resume, or cancel downloads and keep the downloaded files; deleting files requires separate confirmation.
+- Browse cached game information when a catalog or your library disk is unavailable.
+- Choose a theme and use the interface in any of 9 supported languages.
 
 The scanner does not decrypt archives or require console keys. Unknown local versions stay unknown; a newer version listed in titledb does not guarantee that a catalog download contains it.
 
@@ -63,9 +68,19 @@ A Wayland or X11 desktop session, working Vulkan drivers, and a desktop portal w
 
 1. Open the app and choose the folder containing your game archives.
 2. Wait for the scan to finish, then browse your collection and check for known updates.
-3. Open Settings to change the library folder, interface language, or catalog sources.
+3. Open Settings to change the library folder, language, theme, or catalog sources.
 
 Changing the library folder leaves existing files where they are. Scanning never writes to archives. Replacing or deleting files happens only when you confirm it.
+
+## Catalogs and game downloads
+
+In Settings, you can add external catalogs, edit their addresses, enable or disable them, and change their order. Catalogs higher in the list take priority. Removing a catalog leaves your files and queued downloads in place. You can also use the app with only your local library.
+
+If a game has several releases, choose one in its details to view its files or download it. Before replacing local files, review the comparison and confirm the update. The app prepares the download in a temporary folder, which needs extra disk space. Local files outside the selected torrent stay on disk.
+
+## Application updates
+
+Use **Check for Updates** in the application menu to check for a new version of Switch Library. When an update is available, select it in the status bar, then choose **Restart to update** when ready. If automatic updating is unavailable for your build, download the new version from [Releases](https://github.com/XpycT/switch-library-releases/releases).
 
 ## Bugs and feature requests
 
