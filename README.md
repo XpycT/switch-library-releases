@@ -14,16 +14,21 @@ This repository hosts public releases of the app and issue reports.
 
 ## Features
 
-- Scan NSP, NSZ, NSX, XCI, and XCZ archives recursively.
+- Scan NSP, NSZ, NSX, XCI, and XCZ archives across several library folders, including subfolders.
 - Group base games, updates, and DLC by Title ID.
-- Browse your library and external catalogs with covers, screenshots, game descriptions, and local file lists. Search by name, filter by genre, and sort by title, size, or release date.
+- Browse your library and external catalogs with covers, screenshots, game descriptions, and a folder tree of local files. Open a game's folder in your file manager. Search by name, filter by genre, and sort by title, size, or release date.
 - Compare known local versions with titledb to find available updates.
+- See installed and missing DLC and available updates in one list. Ignore entries you do not need and restore them later.
+- View game languages and voice languages when that information is available. Installed game languages come from the newest readable local update or the base game.
 - Choose between available releases of a game and compare their files with your local copy before downloading.
+- Choose a library folder for each download, with the required and available space shown before you confirm. Folders that cannot fit the download are unavailable.
 - Add games to the download queue. Pause, resume, or cancel downloads and keep the downloaded files; deleting files requires separate confirmation.
 - Browse cached game information when a catalog or your library disk is unavailable.
 - Choose a theme and use the interface in any of 9 supported languages.
 
-The scanner does not decrypt archives or require console keys. Unknown local versions stay unknown; a newer version listed in titledb does not guarantee that a catalog download contains it.
+Scanning works without console keys. You can optionally select a key file or folder in Settings and enable key use to read titles, languages, and versions from archive metadata. If that metadata cannot be read, the scanner falls back to file names. You can turn key use off without losing the saved path.
+
+Unknown local versions stay unknown; a newer version listed in titledb does not guarantee that a catalog download contains it.
 
 ## Downloads and installation
 
@@ -68,15 +73,15 @@ A Wayland or X11 desktop session, working Vulkan drivers, and a desktop portal w
 
 1. Open the app and choose the folder containing your game archives.
 2. Wait for the scan to finish, then browse your collection and check for known updates.
-3. Open Settings to change the library folder, language, theme, or catalog sources.
+3. Open Settings to add or remove library folders, change the language or theme, manage catalog sources, or configure optional console keys.
 
-Changing the library folder leaves existing files where they are. Scanning never writes to archives. Replacing or deleting files happens only when you confirm it.
+Adding or removing library folders leaves existing files where they are. Downloads already in the queue keep their saved destinations. Scanning never writes to archives. Replacing or deleting files happens only when you confirm it.
 
 ## Catalogs and game downloads
 
 In Settings, you can add external catalogs, edit their addresses, enable or disable them, and change their order. Catalogs higher in the list take priority. Removing a catalog leaves your files and queued downloads in place. You can also use the app with only your local library.
 
-If a game has several releases, choose one in its details to view its files or download it. Before replacing local files, review the comparison and confirm the update. The app prepares the download in a temporary folder, which needs extra disk space. Local files outside the selected torrent stay on disk.
+If a game has several releases, choose one in its details to view its files or download it. Select a destination folder and confirm the download. The app marks folders that already contain the game, so you can see when you are downloading another copy. Before replacing local files, review the comparison and confirm the update. The app prepares the download in a temporary folder, which needs extra disk space. Local files outside the selected download stay on disk.
 
 ## Application updates
 
